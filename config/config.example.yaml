@@ -1,7 +1,24 @@
 trading:
   exchange:
     name: bybit
-    api_key: YOUR_API_KEY_HERE
-    api_secret: YOUR_API_SECRET_HERE
-    testnet: false
+    api_key: "your_api_key"
+    api_secret: "your_api_secret"
+    testnet: true
+  strategy:
+    position_sizing:
+      base_size: 0.1  # 기본 포지션 크기
+      max_size: 1.0   # 최대 포지션 크기
+      volume_factor: 0.5  # 거래량 기반 조정 계수
+    signal_thresholds:
+      min_strength: 0.1   # 최소 신호 강도
+      min_confidence: 0.6  # 최소 신뢰도
+    whale_detection:
+      volume_surge: 2.0    # 거래량 급증 기준
+      min_impact: 0.01     # 최소 가격 영향력
+      consecutive_trades: 3  # 연속 거래 기준
+  risk:
+    max_position_size: 1000
+    risk_level: "moderate"  # low, moderate, high
+    stop_loss: 0.02   # 2% 손절
+    take_profit: 0.06  # 6% 익절
   # ... 나머지 설정 ... 

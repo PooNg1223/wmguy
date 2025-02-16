@@ -111,36 +111,26 @@ class WMGuy:
                 'daily_summary': self.trading.get_daily_summary()
             }
     
-    def learn_market(self, symbol: str, days: int = 30) -> Dict[str, Any]:
-        """시장 학습 및 분석"""
+    def learn_markets(self, days: Optional[int] = 30) -> bool:
+        """시장 학습"""
         try:
-            # 학습 실행
-            self.logger.info(f"Starting market learning for {symbol}")
-            result = self.learner.learn(symbol, days=days)
-            
-            if not result:
-                raise ValueError("Learning failed")
-            
-            # 현재 시장 분석
-            analysis = self.learner.analyze(symbol)
-            
-            # 성과 기록 가져오기
-            performance = self.learner.performance_history[-1]['performance']
-            
-            report = {
-                'symbol': symbol,
-                'signal': analysis['signal'],
-                'strength': analysis['strength'],
-                'confidence': analysis['confidence'],
-                'performance': performance
+            # 거래 기록에서 심볼 추출
+            symbols = {
+                trade.get('trade_info', {}).get('symbol')
+                for trade in self.trading.trades_history
+                if trade.get('trade_info', {}).get('symbol')
             }
             
-            self.logger.info(f"Analysis completed for {symbol}: {report}")
-            return report
+            # 학습 실행
+            for symbol in symbols:
+                self.logger.info(f"Starting market learning for {symbol}")
+                result = self.learner.learn(symbol)  # days 파라미터 제거
+                
+                if not result:
+                    raise ValueError("Learning failed")
+            
+            return True
             
         except Exception as e:
             self.logger.error(f"Market learning failed: {e}")
-            return {
-                'symbol': symbol,
-                'error': str(e)
-            } 
+            return False 
