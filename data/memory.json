@@ -1,0 +1,44 @@
+{
+  "파이썬": {
+    "content": "배우기 쉬운 프로그래밍 언어",
+    "learned_at": "2025-02-16T20:09:00.385221",
+    "auto_learned": true,
+    "source": "conversation"
+  },
+  "깃허브": {
+    "content": "코드를 저장하고 공유하는 플랫폼",
+    "learned_at": "2025-02-16T19:52:20.722060",
+    "auto_learned": true,
+    "source": "conversation"
+  },
+  "Code": {
+    "content": "인기 있는 코드 에디터",
+    "learned_at": "2025-02-16T19:52:20.722062",
+    "auto_learned": true,
+    "source": "conversation"
+  },
+  "WMGUY": {
+    "content": "대화하면서 자동으로 학습하는 AI 비서입니다",
+    "learned_at": "2025-02-16T19:59:14.748481",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "인공지능": {
+    "content": "컴퓨터가 인간처럼 생각하고 학습하는 기술",
+    "learned_at": "2025-02-16T19:52:23.010930",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "자바스크립트": {
+    "content": "웹 개발에 사용되는 언어",
+    "learned_at": "2025-02-16T20:05:48.602080",
+    "auto_learned": true,
+    "source": "conversation"
+  },
+  "리액트": {
+    "content": "인기있는 자바스크립트 프레임워크입니다",
+    "learned_at": "2025-02-16T20:13:21.886716",
+    "auto_learned": false,
+    "source": "manual"
+  }
+}
