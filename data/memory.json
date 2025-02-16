@@ -18,10 +18,10 @@
     "source": "conversation"
   },
   "WMGUY": {
-    "content": "자동으로 학습하는 AI 비서",
-    "learned_at": "2025-02-16T19:52:20.722063",
-    "auto_learned": true,
-    "source": "conversation"
+    "content": "대화하면서 자동으로 학습하는 AI 비서입니다",
+    "learned_at": "2025-02-16T19:59:14.748481",
+    "auto_learned": false,
+    "source": "manual"
   },
   "인공지능": {
     "content": "컴퓨터가 인간처럼 생각하고 학습하는 기술",
