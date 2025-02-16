@@ -28,5 +28,11 @@
     "learned_at": "2025-02-16T19:52:23.010930",
     "auto_learned": false,
     "source": "manual"
+  },
+  "자바스크립트": {
+    "content": "웹 개발에 사용되는 언어",
+    "learned_at": "2025-02-16T20:05:14.311784",
+    "auto_learned": true,
+    "source": "conversation"
   }
 }
