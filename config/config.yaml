@@ -2,6 +2,10 @@ memory:
   file_path: "data/wmguy_memory.json"
   backup_path: "data/backup/"
 
+learning:
+  model_path: "models/"
+  batch_size: 32
+
 cache:
   max_size: 1000
   ttl: 3600
