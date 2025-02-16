@@ -46,5 +46,35 @@
     "learned_at": "2025-02-16T20:52:09.109462",
     "auto_learned": false,
     "source": "manual"
+  },
+  "Python3": {
+    "content": "파이썬의 최신 버전으로, 많은 개선된 기능을 제공합니다",
+    "learned_at": "2025-02-16T20:55:15.603672",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "FastAPI": {
+    "content": "파이썬으로 만든 현대적인 웹 프레임워크입니다",
+    "learned_at": "2025-02-16T21:02:33.504448",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "Django": {
+    "content": "파이썬인가?? 테스트?? 함께?? 화이팅!",
+    "learned_at": "2025-02-16T21:11:25.396985",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "파이": {
+    "content": "커서와 함께하는 비서 만들기 고마워",
+    "learned_at": "2025-02-16T21:08:18.630946",
+    "auto_learned": false,
+    "source": "manual"
+  },
+  "파이ㄱ썬!learn": {
+    "content": "Django \"파이썬의 대표적인 웹 프레임워크로, 풀스택 개발에 사용됩니다!learn Django \"파이썬의 대표적인 웹 프ㄴㄴㄴㄴ",
+    "learned_at": "2025-02-16T21:09:45.897383",
+    "auto_learned": false,
+    "source": "manual"
   }
 }
