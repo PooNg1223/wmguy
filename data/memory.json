@@ -34,5 +34,11 @@
     "learned_at": "2025-02-16T20:05:48.602080",
     "auto_learned": true,
     "source": "conversation"
+  },
+  "리액트": {
+    "content": "인기있는 자바스크립트 프레임워크입니다",
+    "learned_at": "2025-02-16T20:13:21.886716",
+    "auto_learned": false,
+    "source": "manual"
   }
 }
