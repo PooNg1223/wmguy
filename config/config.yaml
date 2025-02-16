@@ -1,15 +1,66 @@
-memory:
-  file_path: "data/wmguy_memory.json"
-  backup_path: "data/backup/"
-
-learning:
-  model_path: "models/"
-  batch_size: 32
-
 cache:
   max_size: 1000
   ttl: 3600
-
+learning:
+  batch_size: 32
+  model_path: models/
+life:
+  calendar_sync:
+    google_calendar_id: primary
+    sync_interval: 3600
+  health:
+    daily_steps_goal: 10000
+    sleep_hours: 8
+  notification_preferences:
+    email: true
+    push: true
+  schedule:
+    reminder_advance: 30
 logging:
-  level: "INFO"
-  file: "logs/wmguy.log"
+  file: logs/wmguy.log
+  level: INFO
+memory:
+  backup_path: data/backup/
+  file_path: data/wmguy_memory.json
+trading:
+  exchange:
+    name: bybit
+    api_key: WUUo340Iern6yvAhLN
+    api_secret: 7zAFc9jq0xNfOtHsZHGw7EbsflOxoU1pyEi4
+    testnet: true
+  tradingview:
+    signals_enabled: true
+    webhook_port: 5000
+  strategy:
+    position_sizing:
+      base_size: 0.1
+      max_size: 1.0
+      volume_factor: 0.5
+    signal_thresholds:
+      min_strength: 0.1
+      min_confidence: 0.6
+    whale_detection:
+      volume_surge: 2.0
+      min_impact: 0.01
+      consecutive_trades: 3
+  risk:
+    max_position_size: 1000
+    risk_level: "moderate"
+    stop_loss: 0.02  # 2%
+    take_profit: 0.06  # 6%
+version: '0.1'
+work:
+  automation_rules:
+  - action: categorize_and_respond
+    name: Email Processing
+    trigger: new_email
+  - action: generate_daily_report
+    name: Report Generation
+    trigger: daily_9am
+  priority_levels:
+  - high
+  - medium
+  - low
+  working_hours:
+    end: '18:00'
+    start: 09:00

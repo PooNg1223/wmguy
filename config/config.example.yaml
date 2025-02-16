@@ -1,0 +1,7 @@
+trading:
+  exchange:
+    name: bybit
+    api_key: YOUR_API_KEY_HERE
+    api_secret: YOUR_API_SECRET_HERE
+    testnet: false
+  # ... 나머지 설정 ... 

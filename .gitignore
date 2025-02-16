@@ -35,3 +35,4 @@ logs/
 
 .DS_Store
 .pytest_cache/
+config/config.yaml

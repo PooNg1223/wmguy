@@ -1,0 +1,61 @@
+# Docker Compose 설정 파일 버전
+version: '3.8'
+
+services:
+  # 메인 AI 비서 애플리케이션
+  wmguy:
+    build: .  # 현재 디렉토리의 Dockerfile 사용
+    volumes:
+      - .:/app  # 현재 디렉토리를 컨테이너의 /app에 마운트
+    env_file: .env  # 환경 변수 파일
+    depends_on:  # 의존성 서비스들
+      - db
+      - redis
+      - elasticsearch
+
+  # PostgreSQL 데이터베이스
+  db:
+    image: postgres:14
+    environment:  # 데이터베이스 초기 설정
+      POSTGRES_DB: wmguy_db
+      POSTGRES_USER: wmguy
+      POSTGRES_PASSWORD: secure_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 데이터 영구 저장
+
+  # Redis 캐시 서버
+  redis:
+    image: redis:7
+    volumes:
+      - redis_data:/data  # 캐시 데이터 저장
+
+  # Elasticsearch 검색 엔진
+  elasticsearch:
+    image: elasticsearch:8.4.0
+    environment:
+      - discovery.type=single-node  # 단일 노드 모드
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+  # Grafana 모니터링 대시보드
+  grafana:
+    image: grafana/grafana:9.0.0
+    ports:
+      - "3000:3000"  # 외부 포트 매핑
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+  # Prometheus 메트릭 수집기
+  prometheus:
+    image: prom/prometheus:v2.38.0
+    volumes:
+      - ./config/prometheus:/etc/prometheus  # 설정 파일
+      - prometheus_data:/prometheus  # 메트릭 데이터
+
+# 데이터 볼륨 정의
+volumes:
+  postgres_data:  # 데이터베이스 데이터
+  redis_data:  # 캐시 데이터
+  elasticsearch_data:  # 검색 엔진 데이터
+  grafana_data:  # 대시보드 데이터
+  prometheus_data:  # 메트릭 데이터 
