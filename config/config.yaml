@@ -1,0 +1,11 @@
+memory:
+  file_path: "data/wmguy_memory.json"
+  backup_path: "data/backup/"
+
+cache:
+  max_size: 1000
+  ttl: 3600
+
+logging:
+  level: "INFO"
+  file: "logs/wmguy.log"
