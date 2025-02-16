@@ -13,6 +13,7 @@ class GitHubSync:
         self.token = os.getenv('GITHUB_TOKEN')
         self.username = os.getenv('GITHUB_USERNAME')
         self.repo_name = os.getenv('GITHUB_REPO')
+        print(f"DEBUG: Username={self.username}, Repo={self.repo_name}")  # 디버깅 추가
         self.github = Github(self.token)
         self._check_config()
 
@@ -30,6 +31,7 @@ class GitHubSync:
     def sync_memory(self, memory_file: Path) -> bool:
         """메모리 파일을 GitHub에 동기화"""
         try:
+            print(f"DEBUG: Accessing repository {self.username}/{self.repo_name}")  # 디버깅 추가
             # 저장소 접근
             repo = self.github.get_user(self.username).get_repo(self.repo_name)
             
@@ -43,11 +45,13 @@ class GitHubSync:
             
             try:
                 # 기존 파일 업데이트
+                print(f"DEBUG: Trying to update existing file at {file_path}")  # 디버깅 추가
                 file = repo.get_contents(file_path)
                 repo.update_file(file_path, message, content, file.sha)
                 print("✨ GitHub에 메모리를 업데이트했어요!")
-            except:
+            except Exception as e:
                 # 새 파일 생성
+                print(f"DEBUG: Creating new file - {e}")  # 디버깅 추가
                 repo.create_file(file_path, message, content)
                 print("✨ GitHub에 새로운 메모리 파일을 생성했어요!")
             
@@ -55,11 +59,13 @@ class GitHubSync:
             
         except Exception as e:
             print(f"⚠️ GitHub 동기화 중 오류 발생: {e}")
+            print(f"DEBUG: Full error details - {str(e)}")  # 디버깅 추가
             return False
 
     def load_memory(self, local_file: Path) -> bool:
         """GitHub에서 메모리 파일 가져오기"""
         try:
+            print(f"DEBUG: Trying to load from {self.username}/{self.repo_name}")  # 디버깅 추가
             # 저장소 접근
             repo = self.github.get_user(self.username).get_repo(self.repo_name)
             
@@ -76,12 +82,14 @@ class GitHubSync:
                 print("✨ GitHub에서 메모리를 가져왔어요!")
                 return True
                 
-            except:
+            except Exception as e:
+                print(f"DEBUG: Failed to load file - {e}")  # 디버깅 추가
                 print("ℹ️ GitHub에 저장된 메모리가 없어요.")
                 return False
                 
         except Exception as e:
             print(f"⚠️ GitHub에서 데이터를 가져오는 중 오류 발생: {e}")
+            print(f"DEBUG: Full error details - {str(e)}")  # 디버깅 추가
             return False
 
 def main():
