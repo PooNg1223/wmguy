@@ -1,6 +1,11 @@
 import logging
 from typing import Optional, Dict, Any
 from pathlib import Path
+import yaml
+
+# Import required classes
+from .memory import Memory
+from .learning import Learning
 
 class WMGuy:
     def __init__(self):
@@ -33,8 +38,8 @@ class WMGuy:
             if not config_path.exists():
                 self.logger.warning("Config file not found, using defaults")
                 return {}
-            # Add config loading logic here
-            return {}
+            with open(config_path, 'r') as f:
+                return yaml.safe_load(f)
         except Exception as e:
             self.logger.error(f"Failed to load config: {e}")
             return {} 
