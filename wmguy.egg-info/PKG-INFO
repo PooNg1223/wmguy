@@ -1,0 +1,39 @@
+Metadata-Version: 2.2
+Name: wmguy
+Version: 0.1
+Summary: Personal AI Assistant
+Author: PooNg1223
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: python-dotenv==1.0.0
+Requires-Dist: PyGithub>=1.55
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: pyyaml==6.0.1
+Requires-Dist: pybit==2.4.1
+Requires-Dist: pandas==1.5.3
+Requires-Dist: numpy==1.24.3
+Requires-Dist: ccxt>=2.0.0
+Requires-Dist: scikit-learn==1.3.2
+Requires-Dist: torch>=1.12.0
+Requires-Dist: transformers>=4.21.0
+Requires-Dist: google-api-python-client>=2.70.0
+Requires-Dist: google-auth-httplib2>=0.1.0
+Requires-Dist: google-auth-oauthlib>=0.5.2
+Requires-Dist: selenium>=4.5.0
+Requires-Dist: beautifulsoup4>=4.11.1
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: black>=22.0.0
+Requires-Dist: isort>=5.10.0
+Requires-Dist: mypy>=0.982
+Requires-Dist: prometheus-client>=0.14.1
+Requires-Dist: grafana-api>=1.0.3
+Requires-Dist: elasticsearch>=8.4.0
+Requires-Dist: tradingview-ta==3.3.0
+Requires-Dist: ta==0.10.2
+Requires-Dist: python-telegram-bot==20.7
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
